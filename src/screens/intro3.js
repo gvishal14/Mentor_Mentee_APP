@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Intro = () => {
+const Intro3 = () => {
   return (
     <View style={{flex: 1}}>
       {/* <View style={{flex: 0.6,marginTop:120,alignItems:'center'}}> */}
@@ -77,7 +77,7 @@ const Intro = () => {
   );
 };
 
-export default Intro;
+export default Intro3;
 
 const styles = StyleSheet.create({
   buttonContainer: {

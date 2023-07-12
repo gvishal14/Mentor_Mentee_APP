@@ -9,7 +9,13 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Intro = () => {
+
+
+const Intro = ({navigation}) => {
+
+  const handleNext = () => {
+    navigation.navigate('intro2');
+  };
   return (
     <View style={{flex: 1}}>
       {/* <View style={{flex: 0.6,marginTop:120,alignItems:'center'}}> */}
@@ -64,7 +70,7 @@ const Intro = () => {
           <TouchableOpacity style={styles.skipButton}>
             <Text>Skip</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.nextButton}>
+          <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
             <Text style={styles.buttonText}>Next</Text>
           </TouchableOpacity>
         </View>
