@@ -1,110 +1,126 @@
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ImageBackground,
-  Button,
-  TouchableOpacity,
-} from 'react-native';
-import React from 'react';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
+import React from 'react'
 
-const Intro = () => {
-  return (
-    <View style={{flex: 1}}>
-      {/* <View style={{flex: 0.6,marginTop:120,alignItems:'center'}}> */}
-      <View style={{position: 'relative'}}>
-        <Image
-          style={{position: 'absolute', zIndex: -1,width:'100%'}}
-          source={require('../assets/intro1/Vector1.png')}></Image>
+const login = ({navigation}) => {
+  const handleNext4 = ()=>{
+    navigation.navigate('Signup')
+  }
+    return (
+        <View>
+            <Image source={require('../assets/login/Group93.png')} style={styles.image} />
+            {/* <Image source={require('../assets/login/Lli.png')} style={styles.image} /> */}
+            <Text style={styles.text}>Welcome Back, you've been missed!</Text>
 
-        {/* <ImageBackground
-        source={require('../assets/intro3/Vector2.png')}
-        style={{flex: 1, marginTop: 120,position:'relative'}}> */}
-        <Image
-          source={require('../assets/intro1/Group89.png')}
-          style={{
-            alignSelf: 'center',
-            flex: 0.6,
-            position: 'absolute',
-            zIndex: 1,
-            top:100
-          }}></Image>
-      </View>
+            <View style={styles.inputContainer}>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Email Id"
+                />
+                <Image source={require('../assets/login/Vector7.png')} style={styles.icon} />
+            </View>
 
-      <View
-        style={{
-          marginLeft: 20,
-          flex: 0.4,
-          position: 'absolute',
-          zIndex: 1,
-          bottom: 60,
-        }}>
-        <Text
-          style={{
-            fontWeight: 'bold',
-            fontSize: 30,
-            color: '#313131',
-            marginTop: 40,
-          }}>
-          Get Mentorship
-        </Text>
-        {/* <Text style={{fontWeight:'bold',fontSize:30,color:'#313131'}}>Best Mentors</Text> */}
-        <View style={{marginTop: 6}}>
-          <Text style={{color: '#313131'}}>
-          Welcome to our mentorship platform.{' '}
-          </Text>
-          {/* <Text style={{color: '#313131'}}>become experts tomorrow</Text> */}
+            <View style={styles.inputContainer}>
+                <TextInput
+                    style={styles.input}
+                    placeholder="Password"
+                    secureTextEntry={true}
+                />
+                <Image source={require('../assets/login/Group2.png')} style={styles.icon} />
+            </View>
+
+            <View style={styles.bottomContainer}>
+                <View style={styles.rememberContainer}>
+                    <Image source={require('../assets/login/Rectangle51.png')} style={styles.picture} />
+                    <Text style={styles.rememberText}>Keep me signed up</Text>
+                </View>
+                <Text style={styles.forgotText}>Forgot password</Text>
+            </View>
+
+            <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Log in</Text>
+            </TouchableOpacity>
+
+            <View style={styles.rowContainer}>
+                <Text style={styles.sign}>Don't have an account yet?</Text>
+                <TouchableOpacity style={styles.add} onPress={handleNext4}>
+                    <Text style={styles.addition}>Sign up</Text>
+                </TouchableOpacity>
+            </View>
         </View>
+    )
+}
 
-        <Image
-          source={require('../assets/intro1/Group90.png')}
-          style={{marginTop: 14}}></Image>
-        <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.skipButton}>
-            <Text>Skip</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.nextButton}>
-            <Text style={styles.buttonText}>Next</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      {/* </ImageBackground> */}
-
-      {/* </View> */}
-    </View>
-  );
-};
-
-export default Intro;
+export default login
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems:'center',
-    // paddingHorizontal: 20,
-    // marginBottom:0
-    top:40,
-   
-
-  },
-  skipButton: {
-    color: '#313131',
-    fontSize: 14,
-  },
-  nextButton: {
-    backgroundColor: '#FE4D4D',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 5,
-    left:70
-    
-  },
-  buttonText: {
-    color: 'white',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
+    image: {
+        marginLeft: 40,
+        marginTop: 40,
+    },
+    text: {
+        marginLeft: 40,
+        marginTop: 10,
+    },
+    inputContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginHorizontal: 40,
+        marginVertical: 10,
+        paddingHorizontal: 10,
+        height: 40,
+        borderColor: 'gray',
+        borderWidth: 1,
+    },
+    icon: {
+        marginLeft: 5,
+    },
+    input: {
+        flex: 1,
+    },
+    button: {
+        backgroundColor: 'red',
+        padding: 10,
+        borderRadius: 5,
+        marginHorizontal: 40,
+        marginVertical: 10,
+        marginTop: 60,
+    },
+    buttonText: {
+        color: 'white',
+        textAlign: 'center',
+        fontWeight: 'bold',
+    },
+    bottomContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginHorizontal: 40,
+        marginTop: 10,
+    },
+    rememberContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+    },
+    picture: {
+        marginRight: 5,
+    },
+    rowContainer: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginHorizontal: 40,
+        marginTop: 10,
+    },
+    sign: {
+        marginRight: 5,
+    },
+    add: {
+        paddingVertical: 5,
+        paddingHorizontal: 10,
+        borderRadius: 5,
+    },
+    addition: {
+        color: 'black',
+        fontWeight: 'bold',
+    },
 });

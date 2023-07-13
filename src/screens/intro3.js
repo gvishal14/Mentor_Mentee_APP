@@ -9,7 +9,10 @@ import {
 } from 'react-native';
 import React from 'react';
 
-const Intro3 = () => {
+const Intro3 = ({navigation}) => {
+  const handleNext3= () =>{
+    navigation.navigate('Login')
+  }
   return (
     <View style={{flex: 1}}>
       {/* <View style={{flex: 0.6,marginTop:120,alignItems:'center'}}> */}
@@ -61,10 +64,10 @@ const Intro3 = () => {
           source={require('../assets/intro3/Group90.png')}
           style={{marginTop: 14}}></Image>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.skipButton}>
+          <TouchableOpacity style={styles.skipButton} onPress={handleNext3}>
             <Text>Skip</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.nextButton}>
+          <TouchableOpacity style={styles.nextButton} onPress={handleNext3}>
             <Text style={styles.buttonText}>Next</Text>
           </TouchableOpacity>
         </View>

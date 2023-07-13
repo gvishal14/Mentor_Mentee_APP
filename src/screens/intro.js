@@ -14,7 +14,7 @@ import React from 'react';
 const Intro = ({navigation}) => {
 
   const handleNext = () => {
-    navigation.navigate('intro2');
+    navigation.navigate('Intro2');
   };
   return (
     <View style={{flex: 1}}>
@@ -67,7 +67,7 @@ const Intro = ({navigation}) => {
           source={require('../assets/intro1/Group90.png')}
           style={{marginTop: 14}}></Image>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.skipButton}>
+          <TouchableOpacity style={styles.skipButton} onPress={handleNext}>
             <Text>Skip</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.nextButton} onPress={handleNext}>
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 5,
-    left:70
+    left:120
     
   },
   buttonText: {

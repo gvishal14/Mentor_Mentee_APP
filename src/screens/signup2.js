@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity, TextInput } from 'react-native';
 import SplashScreen from 'react-native-splash-screen';
-import {} from '@react-native-segmented-control/segmented-control'
-import SegmentedControlTab from 'react-native-segmented-control-tab'
 
-const signup = ({navigation}) => {
-    const handleNext5 = ()=> {
-        navigation.navigate('Signup2')
+const signup2 = ({navigation}) => {
+    const handleNext6 = ()=> {
+        navigation.navigate('')
     }
+    
     useEffect(() => {
         SplashScreen.hide();
     }, []);
@@ -15,17 +14,16 @@ const signup = ({navigation}) => {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Image source={require('../assets/signup/Group103.png')} style={styles.imageA} />
-                <Image source={require('../assets/signup/Signup.png')} style={styles.imageB} />
+                <Image source={require('../assets/signup2/Group2.png')} style={styles.imageA} />
+                <Image source={require('../assets/signup2/Signup.png')} style={styles.imageB} />
                 <Text style={styles.text}>Hello, I guess you are new around here.</Text>
             </View>
-            
             <View style={styles.buttonContainer}>
                 <TouchableOpacity style={[styles.button, styles.leftButton]}>
-                    <Text style={styles.buttonText1}>Mentor</Text>
+                    <Text style={styles.buttonText1} >Mentor</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.button, styles.rightButton]}>
-                    <Text style={styles.buttonText2} onPress={handleNext5}>Mentee</Text>
+                    <Text style={styles.buttonText2}>Mentee</Text>
                 </TouchableOpacity>
             </View>
             <View style={styles.inputContainer}>
@@ -33,14 +31,14 @@ const signup = ({navigation}) => {
                     style={styles.input}
                     placeholder="Referral Code"
                 />
-                <Image source={require('../assets/signup/layer1.png')} style={styles.icon} />
+                <Image source={require('../assets/signup2/layer1.png')} style={styles.icon} />
             </View>
             <View style={styles.inputContainer}>
                 <TextInput
                     style={styles.inputWithIcon}
                     placeholder="Email ID"
                 />
-                <Image source={require('../assets/signup/Group3.png')} style={styles.icon} />
+                <Image source={require('../assets/signup2/Group3.png')} style={styles.icon} />
             </View>
             <View style={styles.inputContainer}>
                 <TextInput
@@ -75,29 +73,23 @@ const signup = ({navigation}) => {
             <View>
                 <Image source={require('../assets/signup/bysingup.png')} style={{marginLeft:20}}/>
             </View>
+
             <View>
             <TouchableOpacity style={styles.buttonn}>
                 <Text style={styles.buttonText}>Continue</Text>
             </TouchableOpacity>
             <View>
-                <Text style={{marginLeft:100,color:'#313131'}}>Joined us before? 
-                <TouchableOpacity style={styles.add} >
-                    <Text style={styles.addition}>Log in</Text>
-                </TouchableOpacity>
+                <Text style={{marginLeft:100,color:'#313131'}}>Joined us before? Log in
                 
                 </Text>
-              
-                
-                
             </View>
             </View>
-            
             
         </ScrollView>
     );
 }
 
-export default signup;
+export default signup2;
 
 const styles = StyleSheet.create({
     container: {
@@ -132,20 +124,21 @@ const styles = StyleSheet.create({
     },
     leftButton: {
         borderRightWidth: 0,
-        backgroundColor: 'black',
+       
     },
     rightButton: {
         borderLeftWidth: 0,
+        backgroundColor: 'black',
     },
     buttonText1: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: 'white',
+        color: 'black',
     },
     buttonText2: {
         fontSize: 16,
         fontWeight: 'bold',
-        color: 'black',
+        color: 'white',
     },
     inputContainer: {
         marginHorizontal: 20,

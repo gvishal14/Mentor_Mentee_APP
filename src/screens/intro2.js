@@ -11,7 +11,7 @@ import {
   
   const Intro2 = ({navigation}) => {
     const handleNext2= () =>{
-      navigation.navigate('intro2')
+      navigation.navigate('Intro3')
     }
     return (
       <View style={{flex: 1}}>
@@ -64,7 +64,7 @@ import {
             source={require('../assets/intro2/Group90.png')}
             style={{marginTop: 14}}></Image>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.skipButton}>
+            <TouchableOpacity style={styles.skipButton} onPress={handleNext2}>
               <Text>Skip</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.nextButton} onPress={handleNext2}>
